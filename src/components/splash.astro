@@ -1,0 +1,72 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import astronautImage from "~/assets/men.png";
+import HeroImage from "~/components/hero-image.astro";
+import Starfield from "~/components/starfield.astro";
+import GitHubCorner from "./github-corner.astro";
+
+const widths = [450, 800];
+const sizes = "(min-width: 240px) 22vw, 27vw";
+---
+
+<section class="hero-section h-full bg-opacity-0 bg-cover">
+  <!-- <Starfield /> -->
+
+  <div class="grid h-full sm:grid-cols-2">
+    <div class="flex flex-col items-center justify-center">
+      <img src="./LOGO.png" alt="logo" class="-mb-10 h-36" />
+      <h2
+        class="text-pretty text-center font-extrabold tracking-tighter text-gray-900 text-3xl md:text-6xl"
+      >
+        <span class="text-primary"> ¡Acapulco!</span>
+        <br />Nos reunimos <br /> para <br /> reconstruir <br />
+        <span class="text-primary"> juntos.</span>
+      </h2>
+    </div>
+    <div id="astronaut" class="flex items-center justify-center">
+      <img src="./men.png" alt="trabajador" class="h-96 md:h-[600px]" />
+    </div>
+  </div>
+</section>
+
+<noscript>
+  <style>
+    #splash-bg-fallback {
+      display: block;
+    }
+  </style>
+</noscript>
+
+<style>
+  @keyframes float {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(0, 30px, 0);
+    }
+  }
+
+  #astronaut {
+    animation: float linear 2.5s infinite alternate;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #astronaut {
+      @apply animate-none;
+    }
+
+    :global(#starfield) {
+      @apply hidden;
+    }
+
+    #splash-bg-fallback {
+      @apply block;
+    }
+  }
+  .hero-section {
+    background-image: url("/herobg.webp");
+  }
+</style>

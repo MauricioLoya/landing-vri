@@ -1,0 +1,19 @@
+[data-theme="light"] {
+  --color-primary: #BE1622;
+  --color-secondary:#F9F9F2;
+  --color-text: theme("colors.gray.900");
+  --color-text-offset: #878787;
+  --color-background: theme("colors.gray.50");
+  --color-background-offset: theme("colors.gray.100");
+  --color-border: theme("colors.gray.900" / 10%);
+}
+
+[data-theme="dark"] {
+  --color-primary: #BE1622;
+  --color-secondary:#F9F9F2 ;
+  --color-text: theme("colors.gray.50");
+  --color-text-offset: #878787;
+  --color-background: theme("colors.gray.900");
+  --color-background-offset: theme("colors.gray.800");
+  --color-border: theme("colors.gray.50" / 10%);
+}
