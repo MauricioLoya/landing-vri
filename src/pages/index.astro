@@ -1,18 +1,19 @@
 ---
-import "@fontsource-variable/inter";
-import Compatibility from "~/components/compatibility.astro";
-import Features from "~/components/features.astro";
-import Footer from "~/components/footer.astro";
-import Header from "~/components/header.astro";
-import Intro from "~/components/intro.astro";
-import Showcase from "~/components/showcase.astro";
-import Splash from "~/components/splash.astro";
-import "~/styles/index.css";
+import '@fontsource-variable/inter'
+import Compatibility from '~/components/compatibility.astro'
+import Contact from '~/components/contact.astro'
+import Features from '~/components/features.astro'
+import Footer from '~/components/footer.astro'
+import Header from '~/components/header.astro'
+import Intro from '~/components/intro.astro'
+import Showcase from '~/components/showcase.astro'
+import Splash from '~/components/splash.astro'
+import '~/styles/index.css'
 
-const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
+const { generator, site } = Astro
+const image = new URL('social.jpg', site)
 const description =
-  "Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.";
+  'Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.'
 ---
 
 <!doctype html>
@@ -36,26 +37,26 @@ const description =
 
     <!-- initialize theme -->
     <script is:inline>
-      const themeSaved = localStorage.getItem("theme");
+      const themeSaved = 'light'
 
       if (themeSaved) {
-        document.documentElement.dataset.theme = themeSaved;
+        document.documentElement.dataset.theme = themeSaved
       } else {
         const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
-        ).matches;
-        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+          '(prefers-color-scheme: dark)'
+        ).matches
+        document.documentElement.dataset.theme = prefersDark ? 'dark' : 'light'
       }
 
       window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => {
-          if (!localStorage.getItem("theme")) {
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', event => {
+          if (!localStorage.getItem('theme')) {
             document.documentElement.dataset.theme = event.matches
-              ? "dark"
-              : "light";
+              ? 'dark'
+              : 'light'
           }
-        });
+        })
     </script>
   </head>
   <body
@@ -65,9 +66,10 @@ const description =
     <Splash />
     <div class="space-y-24 px-8 py-32">
       <Intro />
-      <!-- <Features />
+      <Features />
       <Compatibility />
-      <Showcase /> -->
+      <Showcase />
+      <Contact />
     </div>
     <Footer />
   </body>

@@ -1,56 +1,29 @@
 ---
-import { Icon } from "astro-icon/components";
-import ContentSection from "~/components/content-section.astro";
-import type { FeatureItem } from "~/types";
+import { Icon } from 'astro-icon/components'
+import ContentSection from '~/components/content-section.astro'
+import type { FeatureItem } from '~/types'
 
 const features: Array<FeatureItem> = [
   {
-    title: "Bring Your Own Framework",
+    title: 'Misión',
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "mdi:handshake",
+      'En VRI, nos dedicamos a proporcionar soluciones innovadoras y de alta calidad en productos de vidrio y aluminio. Nos comprometemos a ofrecer productos y servicios que sean duraderos, funcionales y estéticamente atractivos, adaptados a las necesidades específicas de cada proyecto.',
+    icon: 'mdi:handshake'
   },
   {
-    title: "100% Static HTML, No JS",
+    title: 'Visión',
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "mdi:feather",
-  },
-  {
-    title: "On-Demand Components",
-    description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page. If the user never sees it, they never load it.",
-    icon: "mdi:directions-fork",
-  },
-  {
-    title: "Broad Integration",
-    description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any of your favorite npm packages.",
-    icon: "mdi:graph",
-  },
-  {
-    title: "SEO Enabled",
-    description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication.",
-    icon: "mdi:search-web",
-  },
-  {
-    title: "Community",
-    description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "mdi:account-group",
-  },
-];
+      'Nuestra visión es liderar en el mercado mediante la excelencia en el diseño, la fabricación e instalación de estructuras y productos de vidrio y aluminio. Utilizamos y materiales de primera calidad para garantizar la durabilidad, seguridad y eficiencia energética de nuestras soluciones.',
+    icon: 'mdi:feather'
+  }
+]
 ---
 
-<ContentSection title="Features" id="features">
+<ContentSection title="ACERCA DE NOSOTROS" id="sobre-nosotros">
   <Fragment slot="lead">
-    Astro comes <span class="text-primary">batteries included</span>. It takes
-    the best parts of
-    <span class="text-primary">state-of-the-art</span>
-    tools and adds its own <span class="text-primary">innovations</span>.
+    Conoce más sobre nuestra empresa y nuestros valores.
   </Fragment>
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <ul class="grid max-w-6xl grid-cols-1 md:flex md:grid-cols-2 lg:grid-cols-3">
     {
       features.map(({ title, description, icon }) => (
         <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">

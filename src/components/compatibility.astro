@@ -1,89 +1,54 @@
 ---
-import CompatibilityList from "~/components/compatibility-list.astro";
-import ContentSection from "~/components/content-section.astro";
-import type { CompatibilityItem } from "~/types";
+import CompatibilityList from '~/components/compatibility-list.astro'
+import ContentSection from '~/components/content-section.astro'
+import type { CompatibilityItem } from '~/types'
 
 const frameworks: Array<CompatibilityItem> = [
   {
-    title: "React",
-    icon: "frameworks/react",
-    url: "https://reactjs.org/",
+    title: 'React',
+    icon: 'frameworks/react',
+    url: 'https://reactjs.org/'
   },
   {
-    title: "Preact",
-    icon: "frameworks/preact",
-    url: "https://preactjs.com/",
+    title: 'Preact',
+    icon: 'frameworks/preact',
+    url: 'https://preactjs.com/'
   },
   {
-    title: "Svelte",
-    icon: "frameworks/svelte",
-    url: "https://svelte.dev/",
+    title: 'Svelte',
+    icon: 'frameworks/svelte',
+    url: 'https://svelte.dev/'
   },
   {
-    title: "Vue",
-    icon: "frameworks/vue",
-    url: "https://vuejs.org/",
+    title: 'Vue',
+    icon: 'frameworks/vue',
+    url: 'https://vuejs.org/'
   },
   {
-    title: "Solid",
-    icon: "frameworks/solid",
-    url: "https://www.solidjs.com/",
+    title: 'Solid',
+    icon: 'frameworks/solid',
+    url: 'https://www.solidjs.com/'
   },
   {
-    title: "Lit",
-    icon: "frameworks/lit",
-    url: "https://lit.dev/",
-  },
-];
-
-const platforms: Array<CompatibilityItem> = [
-  {
-    title: "Netlify",
-    icon: "platforms/netlify",
-    url: "https://www.netlify.com/",
-  },
-  {
-    title: "Vercel",
-    icon: "platforms/vercel",
-    url: "https://vercel.com/",
-  },
-  {
-    title: "Cloudflare",
-    icon: "fa-brands:cloudflare",
-    url: "https://pages.cloudflare.com/",
-  },
-  {
-    title: "Render",
-    icon: "platforms/render",
-    url: "https://render.com/",
-  },
-  {
-    title: "GitHub",
-    icon: "fa-brands:github",
-    url: "https://pages.github.com/",
-  },
-  {
-    title: "GitLab",
-    icon: "fa-brands:gitlab",
-    url: "https://docs.gitlab.com/ee/user/project/pages/",
-  },
-];
+    title: 'Lit',
+    icon: 'frameworks/lit',
+    url: 'https://lit.dev/'
+  }
+]
 ---
 
-<ContentSection title="Compatibility" id="compatibility">
-  <Fragment slot="lead">
-    Astro <span class="text-primary">plays nice</span>. Bring your own UI{" "}
-    <span class="text-primary">framework</span>
-    and deploy to your favorite <span class="text-primary">platform</span>.
-  </Fragment>
+<ContentSection title="Vidrios y Cancelería" id="vidrio-y-canceleria">
+  <Fragment slot="lead">Calidad y Variedad en Vidrios y Cancelería</Fragment>
   <CompatibilityList
-    items={frameworks}
-    title="Frameworks"
-    url="https://docs.astro.build/core-concepts/framework-components/"
+    title="Ventanas de Aluminio"
+    description="Nuestras ventanas de aluminio están diseñadas para proporcionar confort, seguridad y estilo. Disponemos de opciones en diversas gamas para satisfacer cualquier presupuesto combinadas con una paleta de colores y acabados que se adaptan a cualquier entorno."
   />
   <CompatibilityList
-    items={platforms}
-    title="Platforms"
-    url="https://docs.astro.build/guides/deploy/"
+    title="Tipos de Vidrio"
+    description="Desde vidrio normal para uso estándar hasta opciones avanzadas como el vidrio templado y laminado para mayor seguridad y resistencia, en VRI te ofrecemos una selección completa de vidrios que mejoran tanto la estética como la funcionalidad de tus ventanas."
+  />
+  <CompatibilityList
+    title="Materiales"
+    description="Cada ventana que fabricamos en VRI pasa por un riguroso proceso que garantiza calidad y durabilidad. Desde la selección de materiales hasta el control de calidad final, cuidamos cada detalle para asegurarnos de que nuestros productos superen tus expectativas. Trabajamos con estas marcas enfocadas a vidrio y cancelería como Cuprum, Línea Española, Vitro, Saint-Gobain y Herrajes Europeos, ofreciendo productos de calidad y soluciones especializadas en el sector"
   />
 </ContentSection>

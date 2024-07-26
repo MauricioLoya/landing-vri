@@ -1,25 +1,12 @@
----
-import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
-import astronautImage from "~/assets/men.png";
-import HeroImage from "~/components/hero-image.astro";
-import Starfield from "~/components/starfield.astro";
-import GitHubCorner from "./github-corner.astro";
-
-const widths = [450, 800];
-const sizes = "(min-width: 240px) 22vw, 27vw";
----
-
-<section class="hero-section h-full bg-opacity-0 bg-cover">
+<section id="hero" class="hero-section h-full bg-opacity-0 bg-cover">
   <!-- <Starfield /> -->
 
   <div class="grid h-full sm:grid-cols-2">
     <div class="flex flex-col items-center justify-center">
-      <img src="./LOGO.png" alt="logo" class="-mb-10 h-36" />
+      <img src="./LOGO.png" alt="logo" class="mb-0 h-36 md:-mb-32" />
       <h2
-        class="text-pretty text-center font-extrabold tracking-tighter text-gray-900 text-3xl md:text-6xl"
+        class="text-pretty text-center font-extrabold tracking-tighter text-gray-900 text-4xl md:text-6xl"
       >
-        <span class="text-primary"> ¡Acapulco!</span>
         <br />Nos reunimos <br /> para <br /> reconstruir <br />
         <span class="text-primary"> juntos.</span>
       </h2>
@@ -67,6 +54,6 @@ const sizes = "(min-width: 240px) 22vw, 27vw";
     }
   }
   .hero-section {
-    background-image: url("/herobg.webp");
+    background-image: url('/herobg.webp');
   }
 </style>
