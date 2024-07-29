@@ -8,19 +8,24 @@ const links: Array<FooterLink> = [
     description: "VRI Instagram",
     icon: "fa-brands:instagram",
   },
+  {
+    url: "https://www.facebook.com/vrisys",
+    description: "VRI Facebook",
+    icon: "fa-brands:facebook",
+  },
 ];
 ---
 
 <footer
   class="flex h-64 items-center justify-center bg-opacity-90 bg-footer bg-cover"
 >
-  <ul class="relative grid grid-cols-2 gap-4 sm:grid-cols-4">
+  <ul class="flex justify-center items-center gap-4">
     {
       links.map((link) => (
         <li>
           <a
             target="_blank"
-            class="flex size-16 items-center justify-center rounded-full border-2 border-current p-4"
+            class="text-white hover:text-primary flex size-16 items-center justify-center rounded-full border-4 border-current p-4"
             href={link.url}
           >
             <span class="sr-only">{link.description}</span>
