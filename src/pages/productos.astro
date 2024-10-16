@@ -1,17 +1,35 @@
 ---
 import '@fontsource-variable/inter'
-import Compatibility from '~/components/compatibility.astro'
-import Contact from '~/components/contact.astro'
-import Features from '~/components/features.astro'
 import Footer from '~/components/footer.astro'
 import Header from '~/components/header.astro'
-import Intro from '~/components/intro.astro'
-import Showcase from '~/components/showcase.astro'
-import Splash from '~/components/splash.astro'
+import ProductItem from '~/components/product-item.astro'
 import '~/styles/index.css'
 
 const { generator, site } = Astro
 const image = new URL('social.jpg', site)
+
+const productList = [
+  {
+    name: 'Cortinas Anticiclónica',
+    subTitle: 'Sistema plegable de duelas de protección anticiclónico',
+    description: `Ofrece 3 opciones de anclaje: a pared, piso a techo y sobre pared y opción de nivelación para pisos irregulares. Opción de cierre interno y externo en posición central o lateral.
+Altura máxima de 2840 mm
+Resiste huracanes categoría 5 de hasta más de 250 km/h
+Producto certificado por el Condado de Miami Dade`,
+    image: 'producto-1.png',
+    techincalImage: 'tech-producto-1.png',
+    stats: [
+      { label: 'Aluminio', value: '6063 T6' },
+      { label: 'Norma', value: 'ASTM B221' },
+      { label: 'Pruebas de tensión', value: 'Norma: ASTM B557-06' },
+      {
+        label: 'Pruebas de tensión de Materiales Metálicos',
+        value: 'Norma: ASTM E-8'
+      }
+    ]
+  }
+]
+
 const description =
   'Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.'
 ---
@@ -65,11 +83,18 @@ const description =
     <Header />
     <!-- <Splash /> -->
     <div class="space-y-24 px-8 py-32">
-      <Intro />
-      <Features />
-      <Compatibility />
-      <Showcase />
-      <Contact />
+      {
+        productList.map(product => (
+          <ProductItem
+            name={product.name}
+            subTitle={product.subTitle}
+            description={product.description}
+            image={product.image}
+            stats={product.stats}
+            techincalImage={product.techincalImage}
+          />
+        ))
+      }
     </div>
     <Footer />
   </body>

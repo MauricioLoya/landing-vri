@@ -1,0 +1,56 @@
+---
+export interface Props {
+  name: string
+  subTitle: string
+  description: string
+  image: string
+  stats: { label: string; value: string }[]
+  techincalImage: string
+}
+
+const { name, subTitle, description, image, stats, techincalImage } =
+  Astro.props
+---
+
+<section class="bg-white py-8 antialiased md:py-16 dark:bg-gray-900">
+  <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+      <div class="mx-auto max-w-md shrink-0 lg:max-w-lg">
+        <img class="w-full" src={image} alt="" />
+      </div>
+
+      <div class="mt-6 sm:mt-8 lg:mt-0">
+        <h1
+          class="font-semibold text-gray-900 text-2xl sm:text-2xl dark:text-white"
+        >
+          {name}
+        </h1>
+        <div class="mt-4 sm:flex sm:items-center sm:gap-4">
+          <p class="font-semibold text-gray-900 text-lg dark:text-white">
+            {subTitle}
+          </p>
+        </div>
+
+        <div class="mt-6 grid sm:mt-8 sm:gap-4">
+          {
+            stats.map(({ label, value }) => (
+              <div class="flex items-center gap-2 text-gray-500 dark:text-gray-400">
+                <span class="font-semibold">{label}:</span>
+                <span>{value}</span>
+              </div>
+            ))
+          }
+        </div>
+
+        <hr class="my-6 border-gray-200 md:my-8 dark:border-gray-800" />
+
+        <p class="mb-6 text-gray-500 dark:text-gray-400">
+          {description}
+        </p>
+        <div class="mx-auto max-w-md shrink-0 lg:max-w-lg">
+          <img class="w-full" src={techincalImage} alt="imagen-tecnica" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

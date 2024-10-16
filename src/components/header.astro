@@ -3,22 +3,22 @@ import { Icon } from 'astro-icon/components'
 import type { NavItem } from '~/types'
 
 const navItems: Array<NavItem> = [
-  { title: 'Inicio', url: '#intro' },
-  { title: 'Acerca de Nosotros', url: '#sobre-nosotros' },
-  { title: 'Vidrios y Cancelería', url: '#vidrio-y-canceleria' },
-  { title: 'Nuestro Trabajo', url: '#nuestro-trabajo' },
-  { title: 'Contanto', url: '#contacto' }
+  { title: 'Inicio', url: '/#intro' },
+  { title: 'Acerca de Nosotros', url: '/#sobre-nosotros' },
+  { title: 'Vidrios y Cancelería', url: '/#vidrio-y-canceleria' },
+  { title: 'Nuestro Trabajo', url: '/#nuestro-trabajo' },
+  { title: 'Productos', url: '/productos' },
+  { title: 'Contacto', url: '/#contacto' }
 ]
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="fixed-header absolute z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <h1 class="sr-only">VRI Servicios y Suministros</h1>
-    <img src="./LOGO.png" alt="VRI Servicios y Suministros" class="h-20" />
-    <span class="-mt-3 font-bold"> Servicios y Suministros</span>
+    <img src="./LOGO.png" alt="VRI Servicios y Suministros" class="h-14" />
   </a>
   <div>
     <div class="flex items-center gap-6">
@@ -117,11 +117,6 @@ const navItems: Array<NavItem> = [
 
   openNavButton.addEventListener('click', openMenu)
   closeNavButton.addEventListener('click', closeMenu)
-
-  document.addEventListener('scroll', () => {
-    const d = page.clientHeight - page.scrollTop - header.offsetHeight
-    header.classList.toggle('fixed-header', d < 0)
-  })
 
   menu.addEventListener('click', event => {
     if ((event.target as HTMLElement).tagName === 'A') {

@@ -1,6 +1,6 @@
 [data-theme="light"] {
-  --color-primary: #BE1622;
-  --color-secondary:#F9F9F2;
+  --color-primary: #2B3E63;
+  --color-secondary:#CACBCF;
   --color-text: theme("colors.gray.900");
   --color-text-offset: #878787;
   --color-background: theme("colors.gray.50");
