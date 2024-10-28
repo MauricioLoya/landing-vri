@@ -13,11 +13,23 @@ import '~/styles/index.css'
 const { generator, site } = Astro
 const image = new URL('social.jpg', site)
 const description =
-  'Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.'
+  'Somos un taller especializado y certificado por Eurovent para el diseño, fabricación de ventanas de aluminio y cristal templado. Amplia Gama de Productos: Ofrecemos una extensa variedad de productos adaptados a sus necesidades específicas. Compromiso con la Calidad : Estamos comprometidos con la mejora continua y el cumplimiento de los más altos estándares de calidad en cada proyecto'
+
+const images = [
+  '1.jpg',
+  '2.jpg',
+  '3.jpg',
+  '4.jpg',
+  '5.jpg',
+  '6.jpg',
+  '7.jpg',
+  '8.jpg',
+  '9.jpg'
+]
 ---
 
 <!doctype html>
-<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+<html lang="es" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -63,12 +75,33 @@ const description =
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
   >
     <Header />
-    <!-- <Splash /> -->
+    <Splash />
     <div class="space-y-24 px-8 py-32">
       <Intro />
       <Features />
       <Compatibility />
       <Showcase />
+      <div class="mx-auto max-w-5xl">
+        <h2
+          class="text-center font-extrabold tracking-tight text-primary text-6xl"
+        >
+          Conoce cómo trabajamos
+        </h2>
+
+        <div class="mt-16 grid grid-cols-2 gap-4 md:grid-cols-3">
+          {
+            images.map((image, index) => (
+              <div>
+                <img
+                  class="h-auto max-w-full rounded-lg"
+                  src={image}
+                  alt="show-case-image"
+                />
+              </div>
+            ))
+          }
+        </div>
+      </div>
       <Contact />
     </div>
     <Footer />

@@ -1,31 +1,31 @@
 ---
-import { Icon } from "astro-icon/components";
-import type { FooterLink } from "~/types";
+import { Icon } from 'astro-icon/components'
+import type { FooterLink } from '~/types'
 
 const links: Array<FooterLink> = [
   {
-    url: "https://www.instagram.com/vri.admonyserv",
-    description: "VRI Instagram",
-    icon: "fa-brands:instagram",
+    url: 'https://www.instagram.com/indalmormx',
+    description: 'Indalmor Instagram',
+    icon: 'fa-brands:instagram'
   },
   {
-    url: "https://www.facebook.com/vrisys",
-    description: "VRI Facebook",
-    icon: "fa-brands:facebook",
-  },
-];
+    url: 'https://www.facebook.com/indalmormx',
+    description: 'Indalmor',
+    icon: 'fa-brands:facebook'
+  }
+]
 ---
 
 <footer
-  class="flex h-64 items-center justify-center bg-opacity-90 bg-footer bg-cover"
+  class="bg-footer flex h-64 items-center justify-center bg-opacity-90 bg-cover"
 >
-  <ul class="flex justify-center items-center gap-4">
+  <ul class="flex items-center justify-center gap-4">
     {
-      links.map((link) => (
+      links.map(link => (
         <li>
           <a
             target="_blank"
-            class="text-white hover:text-primary flex size-16 items-center justify-center rounded-full border-4 border-current p-4"
+            class="flex size-16 items-center justify-center rounded-full border-4 border-current p-4 text-white hover:text-primary"
             href={link.url}
           >
             <span class="sr-only">{link.description}</span>
@@ -39,6 +39,6 @@ const links: Array<FooterLink> = [
 
 <style>
   .bg-footer {
-    background-image: url("/footerbg.webp");
+    background-image: url('/footerbg.webp');
   }
 </style>
